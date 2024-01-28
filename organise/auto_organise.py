@@ -27,7 +27,7 @@ def check_folders():
 def move_files():
     for f in all_files:
         src_path = os.path.join(source, f)
-        if f.endswith("jpg") or f.endswith("png") or f.endswith("heif") or f.endswith("raw"):
+        if f.endswith("jpg") or f.endswith("jpeg") or f.endswith("png") or f.endswith("heif") or f.endswith("raw") or f.endswith("svg") or f.endswith("webp"):
             dst_path = os.path.join(dest_images, f)
             shutil.move(src_path, dst_path)
         elif f.endswith("pdf"):
