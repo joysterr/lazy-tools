@@ -9,8 +9,9 @@ dest_images = f'{source}/Images'
 dest_pdfs = f'{source}/PDF'
 dest_installer = f'{source}/Installers'
 dest_audio = f'{source}/Audio'
+dest_video = f'{source}/Video'
 
-destinations_arr = [dest_images, dest_pdfs, dest_installer, dest_audio]
+destinations_arr = [dest_images, dest_pdfs, dest_installer, dest_audio, dest_video]
 all_files = os.listdir(source)
 
 
@@ -38,6 +39,9 @@ def move_files():
             shutil.move(src_path, dst_path)
         elif f.endswith("mp3") or f.endswith("wav") or f.endswith("flac") or f.endswith("alac"):
             dst_path = os.path.join(dest_audio, f)
+            shutil.move(src_path, dst_path)
+        elif f.endswith("mp4") or f.endswith("mov") or f.endswith("avi"):
+            dst_path = os.path.join(dest_video, f)
             shutil.move(src_path, dst_path)
         else:
             continue
